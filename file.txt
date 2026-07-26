@@ -1,2 +1,0 @@
-HELLO GIT
-Welcome to DevOps
