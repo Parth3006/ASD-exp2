@@ -1,14 +1,12 @@
 pipeline {
     agent any
 
-    triggers {
-        pollSCM('H/5 * * * *')
-    }
-
     stages {
-        stage('Build') {
+        stage('Deploy') {
             steps {
-                echo 'Build successful'
+                bat 'docker build -t myweb .'
+                bat 'docker rm -f myweb-container || exit /b 0'
+                bat 'docker run -d --name myweb-container -p 8082:80 myweb'
             }
         }
     }
