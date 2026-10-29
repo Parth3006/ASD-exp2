@@ -1,0 +1,46 @@
+# 1. Configure username and email
+git config user.name "Your Name"
+git config user.email "your-email@gmail.com"
+
+# 2. Create folder and initialize Git
+mkdir git-practical
+cd git-practical
+git init
+
+# 3. Create, add and commit a file
+echo "Hello Git" > file.txt
+git add .
+git commit -m "First commit"
+
+# 4. Modify file and show differences
+echo "Welcome to Git" >> file.txt
+git diff
+git add file.txt
+git commit -m "Add welcome message"
+
+# 5. Connect GitHub and push
+git branch -M main
+git remote add origin https://github.com/USERNAME/REPO.git
+git push -u origin main
+
+# 6. Pull changes from GitHub
+git pull origin main
+
+# 7. Create and switch to feature branch
+git branch feature
+git switch feature
+
+# 8. Add and commit feature
+echo "New feature" > feature.txt
+git add .
+git commit -m "Add feature"
+
+# 9. Merge feature into main
+git switch main
+git merge feature
+
+# 10. Push merged changes to GitHub
+git push origin main
+
+# 11. Check repository status
+git status
